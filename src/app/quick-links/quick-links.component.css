@@ -1,0 +1,9 @@
+.quick-links {
+  background: #1e8b7b;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+
+  a { color: #fff; margin: 0 0.5rem; text-decoration: none; }
+  .footer-bottom { margin-top: 1rem; display: flex; justify-content: space-around; font-size: 0.9rem; }
+}

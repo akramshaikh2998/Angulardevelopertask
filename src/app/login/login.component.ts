@@ -60,7 +60,8 @@ export class LoginComponent implements OnInit {
         next: (res: any) => {
           this.loading = false;
           console.log('Login API response:', res);
-          if (res && res.status === 'success') {
+          
+          if (res && res.status === 1 ) {
             localStorage.setItem('userData', JSON.stringify(res.data));
 
             // if (this.rememberMe) {
@@ -72,7 +73,7 @@ export class LoginComponent implements OnInit {
             // }
 
 
-            this.router.navigate(['/dashboard.component.html']);
+            this.router.navigate(['/dashboard']);
           } else {
             this.errorMessage = res?.message || 'Login failed. Please check your credentials.';
           }

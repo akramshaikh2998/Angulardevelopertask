@@ -35,19 +35,33 @@
 
 /* Inputs */
 .login-box input[type="email"],
-.login-box input[type="password"] {
+.login-box input[type="password"],
+.login-box input[type="text"] {
   width: 100%;
-  padding: 14px 12px;
+  padding: 14px 40px 14px 12px; /* extra right padding for the eye icon */
   margin: 8px 0 16px 0;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 14px;
   box-sizing: border-box;
+  font-family: inherit;
 }
 
-/* Password wrapper (for show/hide icon) */
+/* Password wrapper */
 .password-wrapper {
   position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+  font-size: 16px;
+  z-index: 2;
+  user-select: none;
 }
 
 /* Forgot password */

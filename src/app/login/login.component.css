@@ -1,0 +1,102 @@
+/* Full-page background */
+.login-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: url('assets/login-bg.jpg') no-repeat center center; */
+  background-size: cover;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Login box */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  width: 400px;
+  text-align: center;
+}
+
+/* Logo */
+.login-box .logo img {
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+/* Heading */
+.login-box h3 {
+  margin-bottom: 30px;
+  color: #000;
+  font-weight: 500;
+}
+
+/* Inputs */
+.login-box input[type="email"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 14px 12px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Password wrapper (for show/hide icon) */
+.password-wrapper {
+  position: relative;
+}
+
+/* Forgot password */
+.forgot-password {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #007b7b;
+}
+
+/* Error messages */
+.error, .api-error {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 10px;
+  display: block;
+  text-align: left;
+}
+
+/* Login button */
+.login-box button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #008080;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-box button:disabled {
+  background-color: #55a3a3;
+  cursor: not-allowed;
+}
+
+/* Create account link */
+.create-account {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #000;
+}
+
+.create-account a {
+  text-decoration: none;
+  color: #008080;
+  font-weight: 500;
+}

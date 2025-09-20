@@ -1,0 +1,36 @@
+<div class="login-page">
+  <div class="login-box">
+    <div class="logo">
+      <img src="assets/Kland.png" alt="Kland Logo" />
+    </div>
+    <h3>ENTER YOUR EMAIL TO CONTINUE</h3>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input type="email" formControlName="email" placeholder="Email" />
+      <span class="error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        Enter a valid email
+      </span>
+
+      <div class="password-wrapper">
+        <input type="password" formControlName="password" placeholder="Password" />
+        <!-- You can add show/hide icon if needed -->
+      </div>
+      <span class="error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        Password is required
+      </span>
+
+      <div class="forgot-password">
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <div class="api-error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <button type="submit" [disabled]="loading">
+        {{ loading ? 'Logging in...' : 'Login' }}
+      </button>
+    </form>
+
+    <div class="create-account">
+      Don't have an account? <a href="#">Create Account</a>
+    </div>
+  </div>
+</div>

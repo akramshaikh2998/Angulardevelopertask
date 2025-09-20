@@ -1,0 +1,31 @@
+<div class="dashboard">
+  <header>
+    <!-- <img src="assets/logo.png" alt="Logo" class="logo" /> -->
+    <div class="user-info">
+      <span>Welcome, {{ userData?.name || userData?.email }}</span>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <h2>Dashboard</h2>
+    <div class="stats-cards">
+      <div class="card total">
+        <h3>Total Files</h3>
+        <p>{{ stats.totalFiles }}</p>
+      </div>
+      <div class="card approved">
+        <h3>Approved</h3>
+        <p>{{ stats.approved }}</p>
+      </div>
+      <div class="card pending">
+        <h3>Pending</h3>
+        <p>{{ stats.pending }}</p>
+      </div>
+      <div class="card errors">
+        <h3>Errors</h3>
+        <p>{{ stats.errors }}</p>
+      </div>
+    </div>
+  </main>
+</div>

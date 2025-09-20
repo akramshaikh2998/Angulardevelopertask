@@ -6,13 +6,34 @@
   font-family: Arial, sans-serif;
 }
 
-.quick-links a {
-  color: #fff;
-  margin: 0 0.5rem;
-  text-decoration: none;
+/* Use flexbox for quick links to evenly space and wrap */
+.quick-links nav.links {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
-.quick-links a:hover {
+.quick-links nav.links a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  padding: 0 0.3rem;
+}
+
+/* Add pipe separator after every link except last */
+.quick-links nav.links a:not(:last-child)::after {
+  content: "|";
+  color: #fff;
+  position: absolute;
+  right: -0.6rem;  /* position the pipe with some spacing */
+  top: 0;
+  font-weight: normal;
+}
+
+/* Hover effect for links */
+.quick-links nav.links a:hover {
   text-decoration: underline;
 }
 
@@ -34,6 +55,7 @@
 .quick-links .copy span {
   display: block;
 }
+
 .follow-us {
   display: inline-block;
   text-align: center;
@@ -44,6 +66,7 @@
   color: #E1306C;
   margin-top: 4px;
 }
+
 .brand-logo {
   height: 24px;
   vertical-align: middle;

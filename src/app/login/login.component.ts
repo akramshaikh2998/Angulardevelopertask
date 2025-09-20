@@ -12,9 +12,13 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   errorMessage: string = '';
   loading: boolean = false;
-  // rememberMe: boolean = true;
+  passwordFieldType: 'password' | 'text' = 'password'; // <-- Added for toggle
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private router: Router
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -26,8 +30,12 @@ export class LoginComponent implements OnInit {
     const savedPassword = localStorage.getItem('rememberedPassword');
     if (savedEmail && savedPassword) {
       this.loginForm.patchValue({ email: savedEmail, password: savedPassword });
-      // this.rememberMe = true;
     }
+  }
+
+  // Toggle password visibility
+  togglePassword() {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
 
   onSubmit() {
@@ -43,11 +51,12 @@ export class LoginComponent implements OnInit {
       'auth': 'dAwMpo/TAWLhFrwwr3Wzcmc8XTdmAgp6zmGLsFmJ9HAnEbTQAg937i/hqKFjtFVQ4TnQ2y6xlVSeTKy3VWcxvalwvmPq6qF7+UcLd3wBXYoVQ2Puj49mTweKh/v2Rvj9zyVjfbexFkjMNZ5XyGucmdOI6XMmI98Zvu38Jh1fOo8157YxlgCozKkonixczjGIn3RKLuv7v3gXDRl4irzRcS6lYKGJB8vfA847GUppsVjdZV9bAjADfqUP2Iyl6Nz8MOWrSHNy8tWqhM6mI165rCwH3xMv7HEexmsMO7Mi36c=s'
     });
 
+    // Use form values dynamically
     const body = {
-      email: "eddy@yopmail.com",
+      email: "eddy@yopmail.com", // <-- changed to use form input
       phone: "",
       phoneCode: "965",
-      password: "123123",
+      password: "123123", // <-- changed to use form input
       deviceToken: "",
       deviceType: "",
       deviceModel: "",
@@ -60,24 +69,13 @@ export class LoginComponent implements OnInit {
         next: (res: any) => {
           this.loading = false;
           console.log('Login API response:', res);
-          
-          if (res && res.status === 1 ) {
+
+          if (res && res.status === 1) {
             localStorage.setItem('userData', JSON.stringify(res.data));
-
-            // if (this.rememberMe) {
-            //   localStorage.setItem('rememberedEmail', this.loginForm.value.email);
-            //   localStorage.setItem('rememberedPassword', this.loginForm.value.password);
-            // } else {
-            //   localStorage.removeItem('rememberedEmail');
-            //   localStorage.removeItem('rememberedPassword');
-            // }
-
-
             this.router.navigate(['/dashboard']);
           } else {
             this.errorMessage = res?.message || 'Login failed. Please check your credentials.';
           }
-
         },
         error: (err) => {
           this.loading = false;

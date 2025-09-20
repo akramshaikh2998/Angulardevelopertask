@@ -1,29 +1,47 @@
 <div class="login-page">
   <div class="login-box">
     <div class="logo">
-     <img src="assets/kland.png" alt="Kland Logo" />
+      <img src="assets/kland.png" alt="Kland Logo" />
     </div>
     <h3>ENTER YOUR EMAIL TO CONTINUE</h3>
+
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <input type="email" formControlName="email" placeholder="Email" />
+      <!-- Email input -->
+      <input 
+        type="email" 
+        formControlName="email" 
+        placeholder="Email" 
+      />
       <span class="error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
         Enter a valid email
       </span>
 
+      <!-- Password input with toggle -->
       <div class="password-wrapper">
-        <input type="password" formControlName="password" placeholder="Password" />
-        <!-- You can add show/hide icon if needed -->
+        <input 
+          [type]="passwordFieldType" 
+          formControlName="password" 
+          placeholder="Password" 
+        />
+        <i 
+          class="toggle-password" 
+          [ngClass]="passwordFieldType === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash'" 
+          (click)="togglePassword()"
+        ></i>
       </div>
       <span class="error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
         Password is required
       </span>
 
+      <!-- Forgot password -->
       <div class="forgot-password">
         <a href="#">Forgot password?</a>
       </div>
 
+      <!-- API error -->
       <div class="api-error" *ngIf="errorMessage">{{ errorMessage }}</div>
 
+      <!-- Login button -->
       <button type="submit" [disabled]="loading">
         {{ loading ? 'Logging in...' : 'Login' }}
       </button>

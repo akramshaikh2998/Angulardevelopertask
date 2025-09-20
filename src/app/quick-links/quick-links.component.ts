@@ -4,31 +4,30 @@ import { Component } from '@angular/core';
   selector: 'app-quick-links',
   template: `
     <footer class="quick-links">
-      <div>Quick links</div>
-      <div>
-        <a href="#">Press</a> |
-        <a href="#">FAQs</a> |
-        <a href="#">Contact us</a> |
-        <a href="#">About us</a> |
-        <a href="#">Join the team</a> |
-        <a href="#">Terms & conditions</a>
-      </div>
-      
+      <div class="title">Quick links</div>
+      <nav class="links">
+        <a href="#" aria-label="Press">Press</a>
+        <a href="#" aria-label="FAQs">FAQs</a>
+        <a href="#" aria-label="Contact us">Contact us</a>
+        <a href="#" aria-label="About us">About us</a>
+        <a href="#" aria-label="Join the team">Join the team</a>
+        <a href="#" aria-label="Terms and conditions">Terms & conditions</a>
+      </nav>
+
       <div class="footer-bottom">
-        <span>PRIVACY POLICY</span>
+        <span class="privacy">PRIVACY POLICY</span>
 
-       <span class="follow-us">
-  FOLLOW US
-  <br>
-  <a href="https://instagram.com/YOUR_PAGE" target="_blank" aria-label="Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-</span>
+        <span class="follow-us">
+          FOLLOW US
+          <br />
+          <a href="https://instagram.com/YOUR_PAGE" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </span>
 
-
-        <span>
+        <span class="presented-by">
           PRESENTED BY
-         <img src="assets/kland.png" alt="KLand Logo" class="brand-logo">
+          <img src="assets/kland.png" alt="KLand Logo" class="brand-logo" />
         </span>
       </div>
 

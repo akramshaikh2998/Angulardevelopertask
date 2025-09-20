@@ -1,9 +1,51 @@
 .quick-links {
   background: #1e8b7b;
   color: white;
-  padding: 2rem;
+  padding: 2rem 1rem;
   text-align: center;
+  font-family: Arial, sans-serif;
+}
 
-  a { color: #fff; margin: 0 0.5rem; text-decoration: none; }
-  .footer-bottom { margin-top: 1rem; display: flex; justify-content: space-around; font-size: 0.9rem; }
+.quick-links a {
+  color: #fff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+.quick-links a:hover {
+  text-decoration: underline;
+}
+
+.quick-links .footer-bottom {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.quick-links .copy {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #e0e0e0;
+}
+
+.quick-links .copy span {
+  display: block;
+}
+.follow-us {
+  display: inline-block;
+  text-align: center;
+}
+
+.follow-us i {
+  font-size: 24px;
+  color: #E1306C;
+  margin-top: 4px;
+}
+.brand-logo {
+  height: 24px;
+  vertical-align: middle;
+  margin-left: 6px;
 }

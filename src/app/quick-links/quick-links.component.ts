@@ -13,10 +13,30 @@ import { Component } from '@angular/core';
         <a href="#">Join the team</a> |
         <a href="#">Terms & conditions</a>
       </div>
+      
       <div class="footer-bottom">
         <span>PRIVACY POLICY</span>
-        <span>FOLLOW US</span>
-        <span>PRESENTED BY KLand</span>
+
+       <span class="follow-us">
+  FOLLOW US
+  <br>
+  <a href="https://instagram.com/YOUR_PAGE" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+</span>
+
+
+        <span>
+          PRESENTED BY
+         <img src="assets/kland.png" alt="KLand Logo" class="brand-logo">
+        </span>
+      </div>
+
+      <div class="copy">
+        <span>Copyright © 2024 K-Land,</span>
+      </div>
+      <div>
+        <span>All Rights Reserved.</span>
       </div>
     </footer>
   `,

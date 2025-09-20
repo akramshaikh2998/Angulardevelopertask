@@ -1,72 +1,238 @@
 .dashboard-container {
   font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-  header {
-    background: #1e8b7b;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
+.logo img {
+  height: 7rem;
+  width: auto;
+}
 
-    .logo { font-size: 1.5rem; font-weight: bold; }
-    .menu { cursor: pointer; .hamburger { margin-left: 10px; } }
-  }
 
-  .main-content {
-    display: flex;
-    padding: 2rem;
+/* HEADER */
+.dashboard-container header {
+  background: #1e8b7b;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
 
-    aside {
-      width: 200px;
-      ul { list-style: none; padding: 0;
-        li { margin: 10px 0;
-          a { text-decoration: none; color: #000; }
-          &.logout a { color: red; }
-        }
-      }
-    }
+.dashboard-container header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
-    .profile-section {
-      flex: 1;
-      padding-left: 2rem;
+.dashboard-container header .menu {
+  cursor: pointer;
+  font-size: 1rem;
+}
 
-      .user-card {
-        display: flex;
-        align-items: center;
-        margin-bottom: 2rem;
+.dashboard-container header .menu .hamburger {
+  margin-left: 10px;
+  font-size: 20px;
+}
 
-        .avatar {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          background: #ccc;
-          margin-right: 1rem;
-        }
-      }
+/* MY ACCOUNT BANNER */
+.dashboard-container .my-account-banner {
+  background-color: #138c87;
+  padding: 60px 20px 30px;
+  text-align: center;
+  position: relative;
+}
 
-      form {
-        .form-group {
-          margin-bottom: 1rem;
-          label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
-          input { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px; }
+/* .dashboard-container .my-account-banner .my-account-title {
+  font-size: 48px;
+  font-style: italic;
+  font-weight: bold;
+  background: linear-gradient(to right, #ffffff, #d2eeeb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  line-height: 1.2;
+} */
 
-          &.phone {
-            display: flex;
-            gap: 0.5rem;
-            .code { width: 80px; }
-          }
-        }
+.dashboard-container .my-account-banner .my-account-title {
+  font-size: 48px;
+  font-style: italic;
+  font-weight: bold;
+  background: linear-gradient(to right, #ffffff, #d2eeeb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  line-height: 1.2;
+}
 
-        .save-btn {
-          background: #1e8b7b;
-          color: #fff;
-          padding: 0.5rem 1rem;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-        }
-      }
-    }
-  }
+.dashboard-container .my-account-banner .my-account-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #333;
+}
+
+
+
+.dashboard-container .my-account-banner .my-account-subtitle {
+  font-size: 15px;
+  color: white;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* PROFILE CARD */
+.dashboard-container .profile-card {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-container .profile-card .avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #666;
+}
+
+.dashboard-container .profile-card .profile-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.dashboard-container .profile-card .profile-info p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* MAIN CONTENT */
+.dashboard-container .main-content {
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* SIDEBAR */
+.dashboard-container .main-content .sidebar-card {
+  width: 220px;
+}
+
+.dashboard-container .main-content .sidebar-card .card {
+  background: #fff;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container .main-content .sidebar-card .card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-container .main-content .sidebar-card .card ul li {
+  margin: 12px 0;
+}
+
+.dashboard-container .main-content .sidebar-card .card ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.dashboard-container .main-content .sidebar-card .card ul li a:hover {
+  background: #f5f5f5;
+}
+
+.dashboard-container .main-content .sidebar-card .card ul li.logout a {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.dashboard-container .main-content .sidebar-card .card ul li.logout a:hover {
+  background: #fdeaea;
+}
+
+/* PROFILE SECTION */
+.dashboard-container .main-content .profile-section {
+  flex: 1;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container .main-content .profile-section h2 {
+  margin-bottom: 1.5rem;
+  color: #1e8b7b;
+}
+
+.dashboard-container .main-content .profile-section .user-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-container .main-content .profile-section .user-card .avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ccc;
+  margin-right: 1rem;
+}
+
+.dashboard-container .main-content .profile-section form .form-group {
+  margin-bottom: 1rem;
+}
+
+.dashboard-container .main-content .profile-section form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.dashboard-container .main-content .profile-section form .form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Phone Input Group */
+.dashboard-container .main-content .profile-section form .form-group.phone {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dashboard-container .main-content .profile-section form .form-group.phone .code {
+  width: 80px;
+}
+
+/* SAVE BUTTON */
+.dashboard-container .main-content .profile-section form .save-btn {
+  background: #1e8b7b;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dashboard-container .main-content .profile-section form .save-btn:hover {
+  background: #14695c;
 }
